@@ -1,0 +1,6 @@
+# dash is required to call `build:py`
+dash
+dash-bootstrap-components==0.9.*
+dash_avs_ui-0.0.1.tar.gz
+botler_universe.tar.gz
+gunicorn
