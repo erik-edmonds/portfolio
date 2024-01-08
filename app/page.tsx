@@ -6,7 +6,9 @@ import { Suspense } from 'react'
 const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false })
 const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false })
 const Duck = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Duck), { ssr: false })
-const Miles = dynamic(() => import('@/components/canvas/Miles').then((mod) => mod.Miles), {ssr: false})
+const Miles = dynamic(() => import('@/components/canvas/Miles').then((mod) => mod.Miles), { ssr: false })
+const Avatar = dynamic(() => import('@/components/canvas/Avatar').then((mod) => mod.Avatar), {ssr: false})
+
 const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
   ssr: false,
   loading: () => (
@@ -39,7 +41,7 @@ export default function Page() {
         <div className='w-full text-center md:w-3/5'>
           <View className='flex h-96 w-full flex-col items-center justify-center'>
             <Suspense fallback={null}>
-              <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
+              <Avatar scale={0.5} position={[0, 0, 0]} />
               <Common />
             </Suspense>
           </View>
@@ -56,7 +58,7 @@ export default function Page() {
         <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
           <View orbit className='relative h-full  sm:h-48 sm:w-full'>
             <Suspense fallback={null}>
-              <Miles scale={20} position={[0, -2, 0]} rotation={[0,0,0]} />
+              <Miles scale={20} position={[0, 5, 0]} rotation={[0,0,0]} />
               <Common color={'lightpink'} />
             </Suspense>
           </View>
