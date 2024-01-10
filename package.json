@@ -1,8 +1,8 @@
 {
-  "name": "react-three-next",
+  "name": "erikedmonds-portfolio",
   "version": "2.0.0",
   "authors": [
-    "Renaud ROHLINGER <https://twitter.com/onirenaud>"
+    "Erik Edmonds <erikedmonds2019@u.northwestern.edu>"
   ],
   "license": "MIT",
   "private": true,
@@ -13,12 +13,17 @@
     "@ducanh2912/next-pwa": "^10.0.0",
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.15.12",
+    "@theatre/core": "^0.7.0",
+    "@theatre/r3f": "^0.7.0",
+    "@theatre/studio": "^0.7.0",
+    "d3": "^7.8.5",
     "glsl-random": "^0.0.5",
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "three": "^0.160.0",
     "three-stdlib": "^2.28.9",
+    "timeline-composer": "^0.1.7",
     "tunnel-rat": "^0.1.2"
   },
   "devDependencies": {
@@ -42,7 +47,9 @@
   },
   "scripts": {
     "lint": "next lint --fix --dir app",
-    "dev": "next dev",
+    "flask-dev": "FLASK_DEBUG=1 && python3 -m flask --app api/index run -p 8000 --reload",
+    "next-dev": "next dev",
+    "dev": "concurrently \"pnpm run next-dev\" \"pnpm run flask-dev\"",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
     "start": "next start",

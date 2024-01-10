@@ -4,11 +4,167 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6be6172-eb2a-47de-8acb-e3a09301d91a" name="Changes" comment="" />
+    <list default="true" id="a6be6172-eb2a-47de-8acb-e3a09301d91a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.portfolio.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.portfolio.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/DESCRIPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/MANIFEST.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/NAMESPACE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/Project.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/R/advancedUI.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/R/basicUI.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/R/internal.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/_validate_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/assets/dash-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/assets/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/Project.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/_validate_init.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/pytest.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/DashAvsUi.jl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/advancedui.jl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/basicui.jl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/demo/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/demo/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/lib/advanced/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/lib/advanced/log-from-file.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/lib/advanced/log-from-live.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/lib/advanced/log-from-stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/lib/components/AdvancedUI.react.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/lib/components/BasicUI.react.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/src/lib/sanitizeEvents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/tests/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/tests/test_usage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash/webpack.serve.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash_avs_ui/AdvancedUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash_avs_ui/BasicUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash_avs_ui/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash_avs_ui/_imports_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash_avs_ui/dash_avs_ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash_avs_ui/dash_avs_ui.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash_avs_ui/metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/dash_avs_ui/package-info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/deps/dash_avs_ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/deps/dash_avs_ui.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/deps/output.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/index.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/inst/deps/dash_avs_ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/inst/deps/dash_avs_ui.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/inst/deps/output.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/man/advancedUI.Rd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/man/basicUI.Rd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/pytest.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/review_checklist.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/DashAvsUi.jl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/advancedui.jl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/basicui.jl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/demo/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/demo/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/lib/advanced/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/lib/advanced/log-from-file.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/lib/advanced/log-from-live.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/lib/advanced/log-from-stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/lib/components/AdvancedUI.react.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/lib/components/BasicUI.react.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/src/lib/sanitizeEvents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/static/dash_avs_ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/static/dash_avs_ui.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/static/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/tests/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/tests/test_usage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/usage-advanced.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/usage-integrated.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/usage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/webpack.serve.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/car.81c4a3a7.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/city.97fe04b5.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/city.d3177ff6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/code/image/city.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/code/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/code/script/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/code/style/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/house.06cbc784.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/index.b744b389.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/index.b744b389.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/index.f6ae3f2d.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/index.f6ae3f2d.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/index.fa165245.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/index.fa165245.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/ss/img (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomous_city/ss/img (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/2012_and_2016_presidential_election_results_by_county.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/anes/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/20201011-nytimes-president.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/20201016-nytimes-president.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/2020_US_County_Level_Presidential_Results.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/CVAP_2010-2014_ACS_csv_files/CVAP_10to14_Documentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/CVAP_2010-2014_ACS_csv_files/County.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/CVAP_2014-2018_ACS_csv_files/CVAP_2014-2018_ACS_Documentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/CVAP_2014-2018_ACS_csv_files/County.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/CVAP_CSV_Format_2005-2009/CVAP_Documentation_Version2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/CVAP_CSV_Format_2005-2009/County.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/mit_countydata/County Presidential Returns 2000-2016.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/mit_countydata/countypres_2000-2016.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/mit_countydata/leip_natl_data_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/counties/nytimes-20201010-president.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/county_2016.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/county_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/cps/gender_race/table04a_2004.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/cps/gender_race/table04b_2008.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/cps/gender_race/table04b_2012.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/cps/gender_race/table04b_2016.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/demographic.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/state_2016.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/state_2020.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/state_converter.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/state_electoral_votes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/data/us-presidential-election-county-results-2004-through-2012.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/election/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dog.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/duck.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/splash/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/splash/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/splash/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvas/Avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvas/Avatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/canvas/Examples.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/canvas/Examples.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/components/Three.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/components/Three.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/Shader/Shader.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="GLSL Shader" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,7 +191,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;UnrealLinkOptionsId&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/erik.edmonds/portfolio/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -58,6 +214,7 @@
       <workItem from="1704032021102" duration="2783000" />
       <workItem from="1704169538588" duration="1923000" />
       <workItem from="1704315223138" duration="1917000" />
+      <workItem from="1704763413832" duration="16727000" />
     </task>
     <servers />
   </component>

@@ -2,12 +2,22 @@
 
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
+import {Delay, Lifetime} from "timeline-composer";
+import {CameraShake} from "@react-three/drei";
 
-const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false })
-const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false })
-const Duck = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Duck), { ssr: false })
-const Miles = dynamic(() => import('@/components/canvas/Miles').then((mod) => mod.Miles), { ssr: false })
-const Avatar = dynamic(() => import('@/components/canvas/Avatar').then((mod) => mod.Avatar), {ssr: false})
+const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false });
+const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false });
+const Duck = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Duck), { ssr: false });
+const Miles = dynamic(() => import('@/components/canvas/Miles').then((mod) => mod.Miles), { ssr: false });
+
+//Animations
+const Falling = dynamic(() => import('@/components/canvas/Avatar').then((mod) => mod.Falling), {ssr: false});
+const Idle = dynamic(() => import('@/components/canvas/Avatar').then((mod) => mod.Idle), {ssr: false});
+const Impact = dynamic(() => import('@/components/canvas/Avatar').then((mod) => mod.Impact), {ssr: false});
+const Standing = dynamic(() => import('@/components/canvas/Avatar').then((mod) => mod.Standing), {ssr: false});
+const Waving = dynamic(() => import('@/components/canvas/Avatar').then((mod) => mod.Waving), {ssr: false});
+
+const Astronaut = dynamic(() => import('@/components/canvas/Astronaut').then((mod) => mod.Astronaut), {ssr: false});
 
 const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
   ssr: false,
@@ -41,7 +51,24 @@ export default function Page() {
         <div className='w-full text-center md:w-3/5'>
           <View className='flex h-96 w-full flex-col items-center justify-center'>
             <Suspense fallback={null}>
-              <Avatar scale={0.5} position={[0, 0, 0]} />
+              <Lifetime seconds={20}>
+                <Lifetime seconds={5}>
+                  <Falling scale={0.5} position={[0, 0, 0]} />
+                </Lifetime>
+
+                <Lifetime seconds={5}>
+                  <Delay seconds={2}>
+                    <CameraShake decay />
+                    <Impact />
+  
+                    <Lifetime seconds={5}>
+                      <Delay seconds={4}>
+                        <Standing />
+                      </Delay>
+                    </Lifetime>
+                    </Delay>
+                </Lifetime>
+              </Lifetime>
               <Common />
             </Suspense>
           </View>
