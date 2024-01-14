@@ -14,7 +14,7 @@ class Message(Resource):
         return {"message": "Hello World"}
 
 
-api.add_resource(Message,"/api/Message")
+api.add_resource(Message,"/api/message")
 
 
 if __name__ == '__main__': 

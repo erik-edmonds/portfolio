@@ -39,36 +39,18 @@ const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mo
 export default function Page() {
   return (
     <>
-      <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
+      <div className='mx-auto flex w-full h-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
         {/* jumbo */}
-        <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
+        <div className='flex w-full h-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
           <p className='w-full uppercase'>Erik Edmonds</p>
           <h1 className='my-4 text-5xl font-bold leading-tight'>My Portfolio</h1>
           <p className='mb-8 text-2xl leading-normal'>Portfolio of personal projects</p>
           <p className='mb-8 text-2xl leading-normal'>TODO: Add Point Cloud transition UPDATE: Point cloud transition as splash page? </p>
         </div>
 
-        <div className='w-full text-center md:w-3/5'>
-          <View className='flex h-96 w-full flex-col items-center justify-center'>
+        <div className='w-full h-full text-center md:w-3/5'>
+          <View className='flex h-96 w-full h-full flex-col items-center justify-center'>
             <Suspense fallback={null}>
-              <Lifetime seconds={20}>
-                <Lifetime seconds={5}>
-                  <Falling scale={0.5} position={[0, 0, 0]} />
-                </Lifetime>
-
-                <Lifetime seconds={5}>
-                  <Delay seconds={2}>
-                    <CameraShake decay />
-                    <Impact />
-  
-                    <Lifetime seconds={5}>
-                      <Delay seconds={4}>
-                        <Standing />
-                      </Delay>
-                    </Lifetime>
-                    </Delay>
-                </Lifetime>
-              </Lifetime>
               <Common />
             </Suspense>
           </View>
@@ -130,6 +112,14 @@ export default function Page() {
             </Suspense>
           </View>
         </div>
+        {/* 
+        Items to be added:
+        - Sections:
+        -- Hobbies
+        -- Machine Learning
+        -- Visualization
+        --- Election: TODO: Upgrade d3.js to visx.js
+        */}
       </div>
     </>
   )

@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 
 import { OBJLoader } from "@/helpers/js/OBJLoaderFaces";
-import * as THREE from '@/helpers/js/threeMod';
+//import * as THREE from '@/helpers/js/threeMod';
 import {createVertices} from "@/helpers/components/VertexConversion";
 
 export function Astronaut(props) {
