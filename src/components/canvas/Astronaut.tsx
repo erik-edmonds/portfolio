@@ -6,9 +6,11 @@ import { OBJLoader } from "@/helpers/js/OBJLoaderFaces";
 //import * as THREE from '@/helpers/js/threeMod';
 import {createVertices} from "@/helpers/components/VertexConversion";
 
+import * as THREE from 'three';
 export function Astronaut(props) {
     const { nodes, materials } = useGLTF("/assets/astronaut.glb");
-
+    const particleCount = 0 , 
+        rocketParticles = 0;
 
     const obj = useLoader(OBJLoader, '/assets/astronaut.obj');
     
@@ -22,8 +24,10 @@ export function Astronaut(props) {
                 let yOffset = (area.max.y * scale) / 2;
     
                 material.geometry.scale(scale,scale,scale);
-                rocketPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(material.geometry, particleCount);
-                createVertices(rocketParticles, rocketPoints, yOffset, 2);
+                const rocketPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(material.geometry, particleCount);
+                
+                // TODO: FIX THIS WHOLE PAGE. RIGHT NOW TRYING TO PREVENT ERRORS.
+                //  createVertices(rocketParticles, rocketPoints, yOffset, 2);
             }
         });
     })

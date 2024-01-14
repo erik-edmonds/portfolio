@@ -12,7 +12,17 @@ const nextConfig = {
     compiler: {
         styledComponents: true,
     },
-    reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+        experimental: {
+            turbotrace: {
+                logLevel: 'error',
+                logDetail: false,
+                logAll: false,
+                contextDirectory: "./logs",
+                processCwd: './',
+                memoryLimit: 8000
+        },
+    },
+    reactStrictMode: true,
     images: {},
     webpack(config, { isServer }) {
         if (!isServer) {
@@ -35,7 +45,7 @@ const nextConfig = {
                 },
             ],
         })
-        
+
         config.module.rules.push({
             test: /\.(glsl|vs|fs|vert|frag)$/,
             exclude: /node_modules/,

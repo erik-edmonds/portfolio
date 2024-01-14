@@ -2,8 +2,10 @@
 
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
+import {Card, CardBody, Image, Button, Slider} from "@nextui-org/react";
 import {Delay, Lifetime} from "timeline-composer";
 import {CameraShake} from "@react-three/drei";
+
 
 const Logo = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Logo), { ssr: false });
 const Dog = dynamic(() => import('@/components/canvas/Examples').then((mod) => mod.Dog), { ssr: false });
@@ -18,6 +20,10 @@ const Standing = dynamic(() => import('@/components/canvas/Avatar').then((mod) =
 const Waving = dynamic(() => import('@/components/canvas/Avatar').then((mod) => mod.Waving), {ssr: false});
 
 const Astronaut = dynamic(() => import('@/components/canvas/Astronaut').then((mod) => mod.Astronaut), {ssr: false});
+
+//
+import { ModelView } from "@/components/canvas/View";
+
 
 const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.View), {
   ssr: false,
@@ -37,26 +43,33 @@ const View = dynamic(() => import('@/components/canvas/View').then((mod) => mod.
 const Common = dynamic(() => import('@/components/canvas/View').then((mod) => mod.Common), { ssr: false })
 
 export default function Page() {
+  // @ts-ignore
   return (
+    // TODO: Dropdown filter
     <>
-      <div className='mx-auto flex w-full h-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
+      {/* Splash Screen. I'm thinking the point cloud visualization.*/}
+      {/* Landing Page */}
+      <div className='mx-auto flex w-screen h-screen flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
         {/* jumbo */}
         <div className='flex w-full h-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-left'>
           <p className='w-full uppercase'>Erik Edmonds</p>
           <h1 className='my-4 text-5xl font-bold leading-tight'>My Portfolio</h1>
           <p className='mb-8 text-2xl leading-normal'>Portfolio of personal projects</p>
-          <p className='mb-8 text-2xl leading-normal'>TODO: Add Point Cloud transition UPDATE: Point cloud transition as splash page? </p>
         </div>
 
+        {/* TODO: Pass class name as a prop to ComponentView */}
         <div className='w-full h-full text-center md:w-3/5'>
-          <View className='flex h-96 w-full h-full flex-col items-center justify-center'>
+          <View className='flex w-full h-full flex-col items-center justify-center'>
             <Suspense fallback={null}>
-              <Common />
+              <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
+              <Common color={'lightpink'}/>
             </Suspense>
           </View>
         </div>
       </div>
 
+      {/* First Row*/}
+      {}
       <div className='mx-auto flex w-full flex-col flex-wrap items-center p-12 md:flex-row  lg:w-4/5'>
         {/* first row */}
         <div className='relative h-48 w-full py-6 sm:w-1/2 md:my-12 md:mb-40'>
@@ -64,23 +77,17 @@ export default function Page() {
           <p className='mb-8 text-gray-600'>Non photorealistic rendering scene of myself in the style of Spiderverse shaders! I created it with React Three Fiber, Maya, and Python. Grease pencil generated with stable diffusion. Read more.</p>
           <p className='mb-8 text-gray-600'>TODO: Add the spiderverse model</p>
         </div>
-        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
-          <View orbit className='relative h-full  sm:h-48 sm:w-full'>
-            <Suspense fallback={null}>
-              <Miles scale={20} position={[0, 5, 0]} rotation={[0,0,0]} />
-              <Common color={'lightpink'} />
-            </Suspense>
-          </View>
-        </div>
-        {/* second row */}
-        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
-          <View orbit className='relative h-full animate-bounce sm:h-48 sm:w-full'>
-            <Suspense fallback={null}>
-              <Duck route='/blob' scale={2} position={[0, -1.6, 0]} />
-              <Common color={'lightblue'} />
-            </Suspense>
-          </View>
-        </div>
+        
+        <ModelView classes={'relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'}>
+          <Logo route='/blob' scale={0.6} position={[0, 0, 0]} />
+          <Common color={'rgba(244, 244, 247, 0.2)'} />
+        </ModelView>
+
+        {/* Second Row */}
+        <ModelView classes={'relative my-12 h-48 w-full animate-bounce py-6 sm:w-1/2 md:mb-40'} bounce={"animate-bounce"}> {/* {'relative h-full animate-bounce sm:h-48 sm:w-full'} */}
+              <Duck route='/blob' scale={2} position={[0, -1.6, 0]} /> 
+              <Common color={'rgba(252, 252, 222, 0.1)'} />
+        </ModelView>
         <div className='w-full p-6 sm:w-1/2'>
           <h2 className='mb-3 text-3xl font-bold leading-none text-gray-800'>Sensor Fusion Visualization</h2>
           <p className='mb-8 text-gray-600'>
@@ -91,6 +98,8 @@ export default function Page() {
           </p>
         </div>
       </div>
+
+      {/* Section Header */}
       <div className='mx-auto flex w-full flex-col flex-wrap items-center md:flex-row  lg:w-4/5'>
         {/* jumbo */}
         <div className='flex w-full flex-col items-start justify-center p-12 text-center md:w-2/5 md:text-center'>
@@ -104,22 +113,10 @@ export default function Page() {
           <p className='mb-8 text-gray-600'>Creation of 3D models from pictures using 3D Gaussian Splatting,</p>
           <p className='mb-8 text-gray-600'>TODO: Add the spiderverse model</p>
         </div>
-        <div className='relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'>
-          <View orbit className='relative h-full  sm:h-48 sm:w-full'>
-            <Suspense fallback={null}>
-              <Dog scale={2} position={[0, -1.6, 0]} rotation={[0.0, -0.3, 0]} />
-              <Common color={'lightpink'} />
-            </Suspense>
-          </View>
-        </div>
-        {/* 
-        Items to be added:
-        - Sections:
-        -- Hobbies
-        -- Machine Learning
-        -- Visualization
-        --- Election: TODO: Upgrade d3.js to visx.js
-        */}
+        <ModelView classes={'relative my-12 h-48 w-full py-6 sm:w-1/2 md:mb-40'}>
+          <Dog scale={2} position={[0, -1.6, 0]} rotation={[0.0, -0.3, 0]} /> 
+          <Common color={'lightpink'} /> 
+        </ModelView>
       </div>
     </>
   )

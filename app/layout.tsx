@@ -1,18 +1,32 @@
 import { Layout } from '@/components/dom/Layout';
 import '@/global.css';
 import { Providers } from './providers';
+import clsx from "clsx";
+import { Metadata } from "next";
+import  { Navbar} from "@/components/dom/navbar";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Erik Edmonds',
-  description: 'A portfolio of projects using Computer Vision, Simulation, and 3D Modeling.',
-}
+  description: 'A portfolio of projects using Computer Vision, Simulation, and 3D Modeling.', 
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" }, 
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ], 
+  icons: {
+    icon: "/favicon.ico", 
+    shortcut: "/favicon-16x16.png", 
+    apple: "/apple-touch-icon.png",
+  }
+};
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
-        <html lang='en' className='antialiased darkMode'>
+        <html lang='en'>
             <head />
-                <body>
-                    <Providers>
+                <body
+                    className = { clsx("min-h-screen font-sans antialiased")}>
+                    <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+                        <Navbar />
                         <Layout>{children}</Layout>
                     </Providers>
                 </body>
