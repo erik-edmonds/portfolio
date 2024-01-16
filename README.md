@@ -2,34 +2,35 @@
 ## Layout
 ### General Functionality
 - Basic page
-    - Help
+    - Filter
 - Transitions
+  - Card on click transitions (See below)
 - Optimizations
   - Speed: Can be rather slow and unpredictable. When finished, remove unnecessary libraries
   - Mobile optimization
     - Get stylings for sizes
     - PWA
 ### Styling
+- Card:
+  - Parent Card
+  - Header
+    - Divider Between header and cardbody
+      - Only if it doesn't take too much space, and only on desktop and mobile. On tablet, use standard card with just parent card, textview and modelview
+  - Text as View? or Card?
+  - ModelView
 - Simple parallax
+- Responsive (See below)
 ## Sections
+### Splash Page
+- Convert from three.js to r3f
 ### Homepage
 - Add black Youtooz model.
-- Items to be added:
-  - Sections:
-  -- Hobbies
-  --- Spiderman
-  -- Machine Learning
-  --- Neural Implicit Representations
-  ---- Stable Diffusion: recreating image from text while modeling directly on implicit neural fields in order to synthesize new data requires a slightly different take on signed distance fields, so
-  this model uses diffusion probabilistic fields
-  ---- Nerf:
-  ---- 3D Gaussian Splatting: Technically it's not a neural implicit representation, as it doesn't make inferences during rendering. But it fits the best here with the other models.
-  --- Computer Vision
-  ---- Lyft
-  -- Visualization
-  --- Election: TODO: Upgrade d3.js to visx.js
-  --- Uber viz
+- Camera transition
+- Dropdown section filter
+- Parallax
+- Lenis Scroll library addition
 ## 3D Models
+- two stage lights red/blue
 ### Animations
 - Spiderman
 ## Flask
@@ -39,4 +40,26 @@
 ## Splash
 ## Deployment
 
+# Responsive Ideas
+- Desktop
+ - Turn section to card in card
+ - On click, full screen card
+ - Compare the first line, 3D Gaussian Splatting to the following rows. Figure out
+which spacing works best. 
+- Tablet
+- Tablet/Mobile
+  - Cards turn to stacked cards
+- Mobile
+  - Turn canvas from perspective mode to orthographic
 
+
+# Necessary Fixes
+- Fix background; only one spinner appearing. There's two 
+- Cards aren't showing properly on mobile
+- Card canvases scroll with the page, when background enabled
+- Expanded card doesn't transition to right location
+- 3D Model disappears on click
+
+
+# Optimizations
+- Change imports to dynamic imports, so they will be loaded when needed instead of immediately

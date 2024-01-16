@@ -11,7 +11,6 @@ const Layout = ({ children }) => {
     <div
       ref={ref}
       style={{
-        position: 'relative',
         width: ' 100%',
         height: '100%',
         overflow: 'auto',

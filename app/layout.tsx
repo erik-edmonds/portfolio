@@ -4,6 +4,7 @@ import { Providers } from './providers';
 import clsx from "clsx";
 import { Metadata } from "next";
 import  { Navbar} from "@/components/dom/navbar";
+import  { Div, MotionDiv} from "@/components/dom/Components";
 
 export const metadata: Metadata = {
   title: 'Erik Edmonds',
@@ -24,7 +25,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <html lang='en'>
             <head />
                 <body
-                    className = { clsx("min-h-screen font-sans antialiased")}>
+                    className = { clsx("min-h-screen bg-background font-sans antialiased")}>
                     <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
                         <Navbar />
                         <Layout>{children}</Layout>
