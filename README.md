@@ -1,11 +1,12 @@
 # Remaining Tasks (In order of Priority)
+[a relative link](priority.md)
 ## Layout
 ### General Functionality
 - Basic page
     - Filter
 - Transitions
   - Card on click transitions (See below)
-- Optimizations
+- Responsive (See below)
   - Speed: Can be rather slow and unpredictable. When finished, remove unnecessary libraries
   - Mobile optimization
     - Get stylings for sizes
@@ -18,17 +19,19 @@
       - Only if it doesn't take too much space, and only on desktop and mobile. On tablet, use standard card with just parent card, textview and modelview
   - Text as View? or Card?
   - ModelView
-- Simple parallax
-- Responsive (See below)
+- Transitions
+  - Transition for card click to center of page and hide background:
+    - Blur or just darken?
 ## Sections
 ### Splash Page
 - Convert from three.js to r3f
 ### Homepage
 - Add black Youtooz model.
+  - Animation:
+    - fall, hit ground, stand up dizzy, then repeat wave
+    - include camera shake on hitting ground and dizziness
 - Camera transition
 - Dropdown section filter
-- Parallax
-- Lenis Scroll library addition
 ## 3D Models
 - two stage lights red/blue
 ### Animations
@@ -54,7 +57,6 @@ which spacing works best.
 
 
 # Necessary Fixes
-- Fix background; only one spinner appearing. There's two 
 - Cards aren't showing properly on mobile
 - Card canvases scroll with the page, when background enabled
 - Expanded card doesn't transition to right location
@@ -63,3 +65,8 @@ which spacing works best.
 
 # Optimizations
 - Change imports to dynamic imports, so they will be loaded when needed instead of immediately
+
+# Nice To Haves
+- Frosted glass over canvas, which disappears on hover
+- Better background, one that highlights parallax more
+- Custom theme
