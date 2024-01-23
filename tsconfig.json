@@ -23,12 +23,13 @@
       "@/*": [
             "app/*",
             "src/*",
+            "public/*"
       ]
     }
   },
   "include": [
-    "next-env.d.ts", 
-    "**/*.ts", 
+    "next-env.d.ts",
+    "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],

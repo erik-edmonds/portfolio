@@ -1,15 +1,15 @@
 'use client'
 
-import React from 'react'
+import React, {Dispatch, SetStateAction} from 'react'
 import { ComponentType, forwardRef, useState, Suspense, useImperativeHandle, useRef } from 'react'
 import { OrbitControls, PerspectiveCamera, View as ViewImpl } from '@react-three/drei'
 import { Three } from '@/helpers/components/Three'
 import dynamic from "next/dynamic";
 import { Card, CardBody} from "@nextui-org/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import { useTransition, useSpring, useChain, config, animated, useSpringRef } from '@react-spring/web';
 
 import styles from "./Components.module.css";
-import {Model} from "@/templates/models/Models";
 
 type ViewProps = {
     children: ComponentType;
@@ -29,7 +29,7 @@ export const Common = ({ color }) => (
   </Suspense>
 )
 
-export const VRef = forwardRef(({ children, orbit, ...props }, ref) => {
+const VRef = forwardRef(({ children, orbit, ...props }, ref) => {
   const localRef = useRef(null)
   useImperativeHandle(ref, () => localRef.current)
 
@@ -101,104 +101,15 @@ export const TextView = dynamic(() => import('@/components/canvas/View').then((m
 
 TextView.displayName = 'TextView'
 ModelView.displayName = 'ModelView'
+
 VRef.displayName = 'VRef'
 
-function CardRow(props) {
-    //const model = null;
-    return(
-        <div className='mx-auto my-0 flex w-full flex-col flex-wrap items-center p-0 md:flex-row machine-learning lg:w-4/5'>
-            {
-                (props.sectionId % 2 === 1)
-                    ? (
-                        <>
-                            <div className='relative h-48 w-full py-6 sm:w-1/2 md:my-12 md:mb-40'>
-                                <h2 className='mb-3 text-3xl font-bold leading-none'>{props.title}</h2>
-                                <p className='mb-8'>{props.detail}</p>
-                            </div> {
-                            (props.sectionId === 1)
-                                ? (
-                                    <>
-                                        <ExpandableCard classes={'relative my-12 lg:h-full w-full animate-bounce py-0 sm:w-1/2 md:mb-40'}>
-                                            { //TODO: Make size, route, scale dynamic
-                                                (props.logo)
-                                                    ? <Model logo route='/blob' scale={2} position={[0, -1.6, 0]} />
-                                                    : <Model path={ props.model } spin={true} route='/blob' scale={2} position={[0, -1.6, 0]} />
-                                            }
-                                            <Common color={'rgba(244, 244, 247, 0.2)'} />
-                                        </ExpandableCard>
-                                    </>
-                                )
-                                : (
-                                    <>
-                                        <ExpandableCard classes={'relative my-12 lg:h-full w-full  py-0 sm:w-1/2 md:mb-40'}>
-                                            { //TODO: Make size, route, scale dynamic
-                                                (props.logo)
-                                                    ? <Model logo  route='/blob' scale={2} position={[0, -1.6, 0]} />
-                                                    : <Model path={ props.model } spin={true} route='/blob' scale={2} position={[0, -1.6, 0]} />
-                                            }
-                                            <Common color={'rgba(244, 244, 247, 0.2)'} />
-                                        </ExpandableCard>
-                                    </>
-                                )
-                        }
-                        </>
-                    )
-                    : (
-                        <>
-                            <ExpandableCard classes={'relative my-12 lg:h-full w-full py-0 sm:w-1/2 md:mb-40'}>
-                                { //TODO: Make size, route, scale dynamic
-                                    (props.logo)
-                                        ? <Model logo  route='/blob' scale={2} position={[0, -1.6, 0]} />
-                                        : <Model path={props.model} spin={true} route='/blob' scale={2} position={[0, -1.6, 0]} />
-                                }
-                                <Common color={'rgba(244, 244, 247, 0.2)'} />
-                            </ExpandableCard>
-                            <div className='w-full p-6 sm:w-1/2'>
-                                <h2 className='mb-3 text-3xl font-bold leading-none'>{props.title}</h2>
-                                <p className='mb-8'>{props.detail}</p>
-                                <p className='mb-8'>
-                                </p>
-                            </div>
-                        </>
-                    )
-            }
-        </div>
-    )
-}
+
+export { VRef }
 
 
-function CardSection(props) {
-    const rows = props.data;
-    return (
-        <>
-            <div className={"mx-auto my-0 flex w-full flex-col flex-wrap items-center p-0 md:flex-row lg:w-4/5 "+props.categoryKey}>
-                <div className='flex w-screen flex-col p-0 text-center md:w-full md:text-center'>
-                    <h1 className='my-0 text-5xl font-bold leading-normal'>{props.categoryName}</h1>
-                    {
-                        rows.map((data) => {
-                                return <CardRow key={data.key} {...data} />
-                            }
-                        )}
-                </div>
-            </div>
-        </>
-    )
-}
-
-
-export function Section(props) {
-    const list = props.list;
-    return (
-        <>
-            {
-                list.map(category => {
-                    return <CardSection data={category.data} categoryName={category.categoryName} categoryKey={category.categoryKey} />
-                })
-            }
-        </>
-    )
-}
 export function ExpandableCard({children, color, classes}: ViewProps) {
+    const {isOpen, onOpen, onClose} = useDisclosure();
     const setBackdrop = React.useState('opaque')[1]
     const [open, set] = useState(false)
 
@@ -252,6 +163,74 @@ export function ExpandableCard({children, color, classes}: ViewProps) {
                     </CardBody>
                 </Card>
             </animated.div>
+        </>
+    );
+}
+
+export function Expansion({children, color, classes}: ViewProps) {
+    const {isOpen, onOpen, onClose} = useDisclosure();
+    const [backdrop, setBackdrop] = React.useState('opaque')
+
+    const handleOpen = () => {
+        setBackdrop("blur")
+        onOpen();
+    }
+
+    return (
+        <>
+            <div className={classes+" content-canvas"} >
+                <Card
+                    isBlurred
+                    isPressable
+                    className="border-none bg-background/60 dark:bg-default-100/50 h-full w-full"
+                    onPress={() => handleOpen()}
+                    shadow="lg">
+                    <CardBody>
+                        <BaseView orbit className={`relative h-full sm:h-48 sm:w-full`}>
+                            <Suspense fallback={null}>
+                                {children}
+                                {color}
+                            </Suspense>
+                        </BaseView>
+                    </CardBody>
+                </Card>
+            </div>
+            <Modal backdrop={backdrop} isOpen={isOpen} onClose={onClose}>
+                <ModalContent>
+                    {(onClose) => (
+                        <>
+                            <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+                            <ModalBody>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Nullam pulvinar risus non risus hendrerit venenatis.
+                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Nullam pulvinar risus non risus hendrerit venenatis.
+                                    Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                                </p>
+                                <p>
+                                    Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
+                                    dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
+                                    Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod.
+                                    Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur
+                                    proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                                </p>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="danger" variant="light" onPress={onClose}>
+                                    Close
+                                </Button>
+                                <Button color="primary" onPress={onClose}>
+                                    Action
+                                </Button>
+                            </ModalFooter>
+                        </>
+                    )}
+                </ModalContent>
+            </Modal>
         </>
     );
 }
