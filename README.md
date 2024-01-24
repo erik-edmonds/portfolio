@@ -2,16 +2,13 @@
 [a relative link](priority.md)
 ## Layout
 ### General Functionality
-- Basic page
-    - Filter
-- Transitions
-  - Card on click transitions (See below)
 - Responsive (See below)
   - Speed: Can be rather slow and unpredictable. When finished, remove unnecessary libraries
   - Mobile optimization
     - Get stylings for sizes
-    - PWA
 ### Styling
+- Background
+  - Parallax finished, need good background
 - Card:
   - Parent Card
   - Header
@@ -58,15 +55,19 @@ which spacing works best.
 
 # Necessary Fixes
 - Cards aren't showing properly on mobile
-- Card canvases scroll with the page, when background enabled
+- Card bounces at inconsistent timing than canvas 
+  - FIX: It's because of improper rendering. Need memoization to improve performance.  
+    - Update filtering in ProjectSection.tsx and the handleFilter function.
 - Expanded card doesn't transition to right location
 - 3D Model disappears on click
 
 
 # Optimizations
-- Change imports to dynamic imports, so they will be loaded when needed instead of immediately
 
-# Nice To Haves
+
+# Post-Deployment
 - Frosted glass over canvas, which disappears on hover
 - Better background, one that highlights parallax more
 - Custom theme
+- - Change imports to dynamic imports, so they will be loaded when needed instead of immediately
+- PWA

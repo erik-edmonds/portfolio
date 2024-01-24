@@ -5,22 +5,31 @@ import { useControls, useCreateStore, Leva, LevaPanel } from "leva";
 import Data  from "@/data/data.json";
 import { Section } from "@/components/canvas/View";
 
-const _array = [...Data];
+const array = [...Data];
 
-const Widget = () => {
+
+//TODO: Switch data to be programmatic
+export function ProjectSection(props) {
     const MLStore = useCreateStore();
     const VizStore = useCreateStore();
     const CVStore = useCreateStore();
     const HobbiesStore = useCreateStore();
 
-    let [ active, setActive ] = useState("");
+    let [ currentArray, setArray ] = useState([...array]);
+
+    //Fix to improve performance
+    const handleFilter = (value) => {
+        currentArray.filter(item => item.categoryKey == value).map(item => item.applied = !(item.applied));
+        const filter = currentArray.filter(name => name.applied == true);
+        setArray([...filter]);
+    };
 
     const machineLearning = useControls(
         {
             "Machine Learning": {
                 value: true,
-                onChange: (value) => {
-                    setActive("machine-learning");
+                onChange: (v) => {
+                    handleFilter("machine-learning");
                 }
             },
         },
@@ -31,8 +40,8 @@ const Widget = () => {
         {
             Visualizations: {
                 value: true,
-                onChange: (value) => {
-                    setActive("visualizations")
+                onChange: (v) => {
+                    handleFilter("visualizations");
                 }
             }
         },
@@ -44,7 +53,7 @@ const Widget = () => {
             "Computer Vision": {
                 value: true,
                 onChange: (v) => {
-                    setActive("computer-vision");
+                    handleFilter("computer-vision");
                 }
             }
         },
@@ -56,7 +65,7 @@ const Widget = () => {
             Hobbies: {
                 value: true,
                 onChange: (v) => {
-                    setActive("hobbies");
+                    handleFilter("hobbies");
                 }
             }
         },
@@ -64,6 +73,7 @@ const Widget = () => {
     );
 
     return(
+    <>
         <div
             style={{
                 width: 350,
@@ -74,22 +84,6 @@ const Widget = () => {
             <LevaPanel fill flat titleBar={false} store={CVStore} />
             <LevaPanel fill flat titleBar={false} store={HobbiesStore} />
         </div>
-    );
-}
-
-//TODO: Switch data to be programmatic
-export function ProjectSection(props) {
-    let [ currentArray, setArray ] = useState([..._array]);
-    let [ active, setActive ] = useState("");
-
-    const filter = useMemo(() => {
-        currentArray.filter(item => item.categoryKey == active).map(item => item.applied = !(item.applied));
-        return currentArray.filter(name => name.applied == true);
-    }, [active])
-
-    return(
-    <>
-        <Widget/>
-        <Section list={..._array} {...props} />
+        <Section list={currentArray} {...props} />
     </>)
 }

@@ -198,6 +198,7 @@ export function Section(props) {
         </>
     )
 }
+
 export function ExpandableCard({children, color, classes}: ViewProps) {
     const setBackdrop = React.useState('opaque')[1]
     const [open, set] = useState(false)
