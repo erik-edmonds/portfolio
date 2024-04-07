@@ -25,8 +25,8 @@ const usePostProcess = () => {
     screen.frustumCulled = false
     screenScene.add(screen)
 
-    const renderTarget = new THREE.WebGLRenderTarget(512, 512, { samples: 4, encoding: new THREE.Texture().encoding }) //new THREE.WebGLRenderTarget(512, 512, {samples: 4, encoding: gl.encoding})
-    renderTarget.depthTexture = new THREE.DepthTexture(0,0);//new THREE.DepthTexture() // fix depth issues
+    const renderTarget = new THREE.WebGLRenderTarget(512, 512, { samples: 4, encoding: gl.encoding })
+    renderTarget.depthTexture = new THREE.DepthTexture() // fix depth issues
 
     // use ShaderMaterial for linearToOutputTexel
     screen.material = new THREE.RawShaderMaterial({

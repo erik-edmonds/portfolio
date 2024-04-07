@@ -1,8 +1,8 @@
-const title = 'Erik Edmonds'
-const url = 'erikedmonds.com'
-const description = 'A portfolio of projects using Computer Vision, Simulation, and 3D Modeling.'
-const author = 'Erik Edmonds'
-const twitter = '@erik.edmonds'
+const title = 'React Three Next Starter'
+const url = 'https://react-three-next.vercel.app/'
+const description = 'The easiest and fastest way to create a 3D website using React Three Fiber and NextJS'
+const author = 'Author'
+const twitter = '@pmndrs'
 
 export default function Head() {
   return (
@@ -20,10 +20,13 @@ export default function Head() {
       <meta name='description' content={description} />
       <meta
         name='keywords'
-        content='Software Engineer,Computer Vision,Autonomous Vehicles,Data Scientist,Computer Scientist'
+        content='Software Engineer,Product Manager,Project Manager,Data Scientist,Computer Scientist'
       />
       <meta name='robots' content='index,follow' />
       <meta name='distribution' content='web' />
+      {/* 
+      Facebook Open Graph meta tags
+        documentation: https://developers.facebook.com/docs/sharing/opengraph */}
       <meta property='og:title' content={title} />
       <meta property='og:type' content='site' />
       <meta property='og:url' content={url} />
